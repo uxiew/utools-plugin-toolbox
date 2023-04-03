@@ -1,0 +1,50 @@
+.toolbox-card {
+  cursor: pointer;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  box-shadow: 0 26px 40px -24px rgba(2, 4, 6, 0.3);
+
+  padding: 0.6rem;
+  margin-left: 10px;
+  max-width: 188px;
+
+  border-radius: 16px;
+  background: #fff;
+
+  margin-bottom: 1.5rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
+  }
+
+  &__img {
+    flex: none !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(128, 128, 128, 0.1);
+    overflow: hidden;
+    margin-right: 0.5rem !important;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__des {
+    text-align: left;
+    overflow: hidden;
+    padding-right: 5px;
+    &-name {
+    }
+    &-title {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}

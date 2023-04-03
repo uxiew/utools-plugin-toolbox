@@ -1,0 +1,27 @@
+{
+  "name": "utools-plugin-toolbox",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@arco-design/web-react": "^2.46.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@arco-plugins/vite-react": "^1.3.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@ver5/vite-plugin-utools": "^0.2.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "less": "^4.1.3",
+    "sass": "^1.60.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "main": "index.html",
+  "logo": "logo.png",
+  "preload": "preload.ts",
+  "author": "ChandlerVer5",
+  "homepage": "https://www.kancloud.cn/@chandler",
+  "description": "uTools react template 😄",
+  "development": {
+    "main": "http://localhost:3000/"
+  },
+  "pluginSetting": {
+    "single": true
+  },
+  "features": [
+    {
+      "code": "dev",
+      "explain": "uTools 官方开源、安全、简洁的xxxx",
+      "cmds": ["dev", "xxx"]
+    }
+  ]
+}
