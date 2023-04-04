@@ -1,105 +1,112 @@
 import { useEffect } from 'react';
-import { Grid } from '@arco-design/web-react';
+import { Grid, Typography } from '@arco-design/web-react';
 import Card from '../Card';
 import './style.scss';
 
-const Row = Grid.Row;
-const Col = Grid.Col;
+const { GridItem } = Grid;
 
 export default function Container() {
   const lists = [
     {
       name: 'CodePen',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen42',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen22',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen5',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen34',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen12',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen3',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen324',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen142',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     },
     {
       name: 'CodePen53',
       title: '开源的前端效果站',
-      img: 'https://cdn.jsdelivr.net/gh/Yafine/cdn@3.2.1/source/box/images/logo/codingame.png'
+      img: 'https://nankart.cn/img/gitee.png'
     }
   ];
   return (
-    <div className='box-content'>
+    <div className='box-container'>
       <div id='Basic'>
-        <h2>Basic</h2>
-        <Row style={{ justifyContent: 'space-evenly' }}>
-          {lists.map(({ name, title, img }) => (
-            <Col key={name + 1} flex='none'>
+        <Typography.Title heading={2} ellipsis>
+          Basic
+        </Typography.Title>
+        <Grid cols={{ sm: 2, md: 3, lg: 4 }} colGap={10}>
+          {lists.map(({ name, title, img }, i) => (
+            <GridItem index={i} key={name + 1}>
               <Card name={name} title={title} img={img} />
-            </Col>
+            </GridItem>
           ))}
-        </Row>
+        </Grid>
       </div>
       <div id='Static'>
-        Static
-        <Row justify='center'>
+        <Typography.Title heading={2} ellipsis>
+          Static
+        </Typography.Title>
+        <Grid cols={{ sm: 2, md: 3, lg: 4 }} colGap={10}>
           {lists.map(({ name, title, img }, i) => (
-            <Col key={name + 1} flex='none'>
+            <GridItem index={i} key={name + 1}>
               <Card name={name} title={title} img={img} />
-            </Col>
+            </GridItem>
           ))}
-        </Row>
+        </Grid>
       </div>
       <div id='Lineless'>
-        Lineless
-        <Row justify='center'>
+        <Typography.Title heading={2} ellipsis>
+          Lineless
+        </Typography.Title>
+        <Grid cols={{ sm: 2, md: 3, lg: 4 }} colGap={10}>
           {lists.map(({ name, title, img }, i) => (
-            <Col key={name + 1} flex='auto'>
+            <GridItem index={i} key={name + 1}>
               <Card name={name} title={title} img={img} />
-            </Col>
+            </GridItem>
           ))}
-        </Row>
+        </Grid>
       </div>
       <div id='Affix'>
-        <h2>Affix</h2>
-        <Row justify='center'>
+        <Typography.Title heading={2} ellipsis>
+          Affix
+        </Typography.Title>
+        <Grid cols={{ sm: 2, md: 3, lg: 4 }} colGap={10}>
           {lists.map(({ name, title, img }, i) => (
-            <Col key={name + 1} flex='auto'>
+            <GridItem index={i} key={name + 1}>
               <Card name={name} title={title} img={img} />
-            </Col>
+            </GridItem>
           ))}
-        </Row>
+        </Grid>
       </div>
       <div id='Hash'>
         <h2>Hash</h2>

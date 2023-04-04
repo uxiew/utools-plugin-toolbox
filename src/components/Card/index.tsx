@@ -1,4 +1,4 @@
-import { Grid } from '@arco-design/web-react';
+import { Grid, Typography } from '@arco-design/web-react';
 const Row = Grid.Row;
 const Col = Grid.Col;
 
@@ -20,18 +20,39 @@ export default function Card(props: Props) {
         href='https://codepen.io/'
         title={title}
       >
-        <Row className='toolbox-card__body' align='center'>
-          <Col className='toolbox-card__img' flex='auto'>
+        <Row className='toolbox-card__body' align='center' div>
+          <Col className='toolbox-card__img'>
             <img src={img} />
           </Col>
-          <Col className='toolbox-card__des' flex='auto'>
-            <div className='toolbox-card__des-name'>
-              <strong>{name}</strong>
-            </div>
-            <p className='toolbox-card__des-title'>{title}</p>
+          <Col className='toolbox-card__des'>
+            <Typography.Paragraph
+              ellipsis={{
+                cssEllipsis: true
+              }}
+              className='toolbox-card__des-name'
+              style={{ marginBottom: 0 }}
+            >
+              <strong>
+                {name} {title}
+              </strong>
+            </Typography.Paragraph>
+            <Typography.Paragraph
+              ellipsis={{
+                cssEllipsis: true,
+                showTooltip: {
+                  type: 'tooltip',
+                  props: { style: { borderRadius: '10px' } }
+                }
+              }}
+              className='toolbox-card__des-title'
+              style={{ marginBottom: 0 }}
+            >
+              {title} {title}
+            </Typography.Paragraph>
           </Col>
         </Row>
       </a>
+
       {/* <a
         title=''
         rel='noopener nofollow'

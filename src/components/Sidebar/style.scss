@@ -1,0 +1,36 @@
+.box-menu {
+  display: flex;
+  align-items: center;
+
+  &.arco-menu-selected {
+  }
+
+  //   @hack
+  .arco-menu-vertical .arco-menu-item,
+  & {
+    padding: 0 !important;
+  }
+
+  &-icon {
+    font-size: 24px;
+    position: absolute;
+    pointer-events: none;
+    margin-left: 14px;
+  }
+
+  &-link {
+    a {
+      margin: 0;
+      //   @hack
+      padding: 10px 30px 10px 50px;
+    }
+  }
+}
+
+.arco-layout-sider-collapsed {
+  .box-menu {
+    &-icon {
+      margin-left: 8px;
+    }
+  }
+}
