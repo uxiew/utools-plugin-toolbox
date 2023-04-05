@@ -17,7 +17,7 @@ function App() {
     (text: string) => {
       console.log(text);
     },
-    '搜索🔍',
+    '任意输入，快速搜索 🔍',
     true
   );
 
@@ -29,7 +29,7 @@ function App() {
         width={150}
         className='box-slider'
       >
-        <Anchor lineless>
+        <Anchor affixStyle={{ position: 'fixed' }} lineless>
           <Sidebar />
         </Anchor>
       </Sider>

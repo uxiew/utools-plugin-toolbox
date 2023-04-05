@@ -13,9 +13,9 @@
   },
   "features": [
     {
-      "code": "dev",
+      "code": "toolbox",
       "explain": "uTools 官方开源、安全、简洁的xxxx",
-      "cmds": ["dev", "xxx"]
+      "cmds": ["toolbox", "xxx"]
     }
   ]
 }
