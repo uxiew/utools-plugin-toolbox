@@ -22,11 +22,7 @@ export default function Sidebar(prop: Props) {
   ];
 
   return (
-    <Menu
-      defaultOpenKeys={['1']}
-      defaultSelectedKeys={['0_3']}
-      style={{ height: '100vh' }}
-    >
+    <Menu tooltipProps={{ disabled: true }} style={{ height: '100vh' }}>
       {categories.map(({ id, name, icon }, i) => {
         // @ts-ignore
         const Icon = FCIcons[icon];
