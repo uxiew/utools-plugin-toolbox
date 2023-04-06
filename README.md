@@ -14,9 +14,15 @@ toolbox for utools；开发工具箱 🧰
 - [ ] 浏览器标签功能
 - [ ] cdn 工具（cdn;有些基于纯 Esbuild 来做线上 cjs -> esm 的 CDN 服务，比如 esm.sh 和 skypack）
 - [ ] 直接查询 gitee,github,gitlab 资源,做 sourceviewer
+- [ ] 直接查询 gitee,github,gitlab 资源,做 sourceviewer
 
 # TODO
 
 - [ ] 禁用/启用某一项功能
 - [ ] 云端存储(json)
 - [ ] 在线工具移植
+
+# 资源
+
+https://tools.miku.ac/
+https://github.com/sdras/cssgridgenerator

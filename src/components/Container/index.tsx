@@ -13,7 +13,7 @@ export default function Container() {
     <div className='box-container'>
       {data.map((cate, index) => (
         <div id={cate.id} key={cate.id + index}>
-          <Typography.Title heading={5} ellipsis>
+          <Typography.Title heading={5}>
             <FCNews />
             <span>{cate.name}</span>
           </Typography.Title>

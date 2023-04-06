@@ -8,6 +8,8 @@ type cate = {
     title: string,
     url: string,
     logo: string
+    // web favorite collection
+    isCollection: boolean
 }
 type Data = {
     id: string
@@ -30,28 +32,28 @@ export const useBoxStore = create<BoxStore>((set) => ({
             icon: 'FCOrgUnit',
             list: [
                 {
-                    id: 'common',
+                    id: 'JSON',
                     name: 'CodePen1',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
                     logo: 'https://nankart.cn/img/gitee.png'
                 },
                 {
-                    id: 'common',
+                    id: 'Calendar',
                     name: 'CodePen11',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
                     logo: 'https://nankart.cn/img/gitee.png'
                 },
                 {
-                    id: 'common',
+                    id: 'CDN',
                     name: 'CodePen12',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
                     logo: 'https://nankart.cn/img/gitee.png'
                 },
                 {
-                    id: 'common',
+                    id: 'Favorite',
                     name: 'CodePen13',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
@@ -65,21 +67,22 @@ export const useBoxStore = create<BoxStore>((set) => ({
             icon: 'FCFilmReel',
             list: [
                 {
-                    id: 'common',
+                    id: 'JSON',
                     name: 'CodePen1422',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
-                    logo: 'https://nankart.cn/img/gitee.png'
+                    logo: 'https://nankart.cn/img/gitee.png',
+                    isCollection: true,
                 },
                 {
-                    id: 'common',
+                    id: 'Favorite',
                     name: 'CodePen1142',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
                     logo: 'https://nankart.cn/img/gitee.png'
                 },
                 {
-                    id: 'common',
+                    id: 'CDN',
                     name: 'CodePen1342',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',
@@ -100,7 +103,7 @@ export const useBoxStore = create<BoxStore>((set) => ({
             icon: 'FCLightAtTheEndOfTunnel',
             list: [
                 {
-                    id: 'common',
+                    id: 'CDN',
                     name: 'CodePen42',
                     title: '开源的前端效果站',
                     url: 'https://google.com/',

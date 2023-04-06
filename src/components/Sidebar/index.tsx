@@ -11,7 +11,7 @@ export default function Sidebar(prop: Props) {
   const { data } = useBoxStore();
 
   return (
-    <Menu tooltipProps={{ disabled: true }} style={{ height: '100vh' }}>
+    <Menu tooltipProps={{ disabled: true }} className='h-screen'>
       {data.map(({ id, name, icon }, i) => {
         // @ts-ignore
         const Icon = FCIcons[icon];

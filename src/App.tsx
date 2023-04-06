@@ -21,6 +21,9 @@ function App() {
     true
   );
 
+  // TODO 每个 feature 都需要配置 feature 快捷打开，或者禁止
+  // utools.setFeature()
+
   return (
     <Layout className='app'>
       <Sider

@@ -1,6 +1,7 @@
-import { Grid, Typography, Trigger } from '@arco-design/web-react';
-import React from 'react';
+import { Grid, Modal, Typography, Trigger } from '@arco-design/web-react';
+import { useState } from 'react';
 import { useBoxStore } from '../../store';
+import Features from '../../features';
 import RightMenu from './RightMenu';
 import './style.scss';
 import type { CardProps } from './types';
@@ -8,12 +9,30 @@ import type { CardProps } from './types';
 const Row = Grid.Row;
 const Col = Grid.Col;
 
-export default function Card(props: CardProps) {
-  const { index, dataIndex, id } = props;
-  const { title, name, logo } = useBoxStore().data[dataIndex].list[index];
+export default function Card({ index, dataIndex, id }: CardProps) {
+  const featureProp = useBoxStore().data[dataIndex].list[index];
+  const { title, name, logo } = featureProp;
+  // const [visible, setVisible] = useState(false);
 
-  const open = () => {
-    console.log(props);
+  const openModal = () => {
+    console.log(`[${id}]: ${name}`);
+    Modal.info({
+      icon: null,
+      title: null,
+      footer: null,
+      closable: true,
+      style: {
+        height: '100vh',
+        width: '100vw',
+        borderRadius: 0
+      },
+      content: getFeatureComp('Glassmorphism')
+    });
+  };
+
+  const getFeatureComp = (id: string) => {
+    const Comp = Features[id] || null;
+    return <Comp {...featureProp} />;
   };
 
   return (
@@ -27,7 +46,7 @@ export default function Card(props: CardProps) {
       }}
       popup={() => <RightMenu />}
     >
-      <div className='toolbox-card' onClick={open}>
+      <div className='toolbox-card' onClick={openModal}>
         <a
           rel='noopener'
           className='toolbox-card__a'

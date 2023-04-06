@@ -1,0 +1,144 @@
+.glassmorphism_bg {
+  background-image: linear-gradient(
+    180deg,
+    #2869d3 5%,
+    #5095e4 20%,
+    #5095e4 60%,
+    #2661bf 95%
+  );
+}
+
+.generate {
+  background-color: #213a5a;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+
+  &_control {
+    padding: 15px 10px 20px;
+  }
+}
+
+.preview {
+  z-index: 2;
+  font-family: Euclid, sans-serif, Arial, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+
+  &-outer {
+    h2 {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -1.8px;
+      line-height: 46px;
+      text-shadow: 0 2px 4px rgba(71, 97, 206, 0.36);
+      position: relative;
+      top: 4px;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: -0.9px;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(71, 97, 206, 0.357272);
+    }
+  }
+
+  .sphere {
+    position: absolute;
+    left: 20%;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #a6c1ec 05%, #6890cd 95%);
+    box-shadow: 0 2px 4px rgba(130, 134, 157, 0.6);
+    &1 {
+      top: 20%;
+      left: 20%;
+      width: 100px;
+      height: 100px;
+    }
+    &2 {
+      top: 2%;
+      left: 64%;
+      width: 100px;
+      height: 100px;
+    }
+    &3 {
+      top: 60%;
+      left: 60%;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+    }
+    &4 {
+      top: 80%;
+      left: 4%;
+      width: 100px;
+      height: 100px;
+      z-index: 0;
+    }
+  }
+
+  //   方块
+  .square {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: rotate(-15deg);
+    border-radius: 10px;
+    background: radial-gradient(
+      circle,
+      hsla(0, 0%, 100%, 0.27) 0,
+      hsla(0, 0%, 100%, 0.05) 100%
+    );
+
+    &2 {
+      top: 16%;
+      left: 10%;
+      width: 75px;
+      height: 75px;
+      font-size: 42px;
+    }
+    &3 {
+      top: 26%;
+      left: 75%;
+      width: 65px;
+      height: 65px;
+      font-size: 34px;
+      z-index: -1;
+    }
+    &6 {
+      top: 76%;
+      left: 10%;
+      width: 65px;
+      height: 65px;
+      font-size: 32px;
+      z-index: 1;
+    }
+
+    &8 {
+      top: 58%;
+      right: 22px;
+      width: 110px;
+      height: 110px;
+      z-index: 2;
+      .btn {
+        width: 46px;
+        height: 46px;
+        background: #80afe7;
+        font-size: 16px;
+      }
+
+      span {
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: -0.55px;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(71, 97, 206, 0.357272);
+        top: 13px;
+      }
+    }
+  }
+}
