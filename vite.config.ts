@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { resolve } from "path";
 import react from '@vitejs/plugin-react-swc'
 import { viteUtoolsPlugin } from '@ver5/vite-plugin-utools'
 import { vitePluginForArco } from '@arco-plugins/vite-react'
@@ -14,4 +15,9 @@ export default defineConfig({
       preload: { name: 'preload' }
     })
   ],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+    },
+  }
 })

@@ -5,11 +5,9 @@
   "author": "ChandlerVer5",
   "homepage": "https://www.kancloud.cn/@chandler",
   "description": "uTools react template 😄",
-  "development": {
-    "main": "http://localhost:3000/"
-  },
   "pluginSetting": {
-    "single": true
+    "single": true,
+    "height": 660
   },
   "features": [
     {
