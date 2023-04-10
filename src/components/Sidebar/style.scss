@@ -1,4 +1,4 @@
-.box-menu {
+.kit-menu {
   display: flex;
   align-items: center;
 
@@ -28,7 +28,7 @@
 }
 
 .arco-layout-sider-collapsed {
-  .box-menu {
+  .kit-menu {
     &-icon {
       margin-left: 8px;
     }

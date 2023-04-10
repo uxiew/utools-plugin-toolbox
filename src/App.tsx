@@ -1,44 +1,45 @@
 import { useState } from 'react';
 import './App.scss';
 import Container from './components/Container';
-import { Anchor, Button, Layout } from '@arco-design/web-react';
-import Sidebar from './components/Sidebar';
+import { Button, Layout } from '@arco-design/web-react';
 import { IconLeft } from '@arco-design/web-react/icon';
-
-const Sider = Layout.Sider;
-const Content = Layout.Content;
+import useFeature from '@/hooks/feature';
+import { getCardInfoByCode } from './common';
+import { useSetState } from 'ahooks';
+import { FeatureComp } from './features/index';
+import AppSide from './App.side';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { getFeature } = useFeature();
+
+  const [state, setState] = useSetState({
+    code: '',
+    theme: window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  });
 
   const [menuCollapse, setMenuCollapse] = useState(false);
 
-  utools.setSubInput(
-    (text: string) => {
-      console.log(text);
-    },
-    '任意输入，快速搜索 🔍',
-    true
-  );
+  utools.onPluginEnter(({ type, code, payload }) => {
+    console.log(type, code, payload);
+    setState({ ...state, code });
+  });
 
-  // TODO 每个 feature 都需要配置 feature 快捷打开，或者禁止
-  // utools.setFeature()
-
-  return (
+  return state.code === '' ? null : state.code === '!!!toolkit' ? (
     <Layout className='app'>
-      <Sider
+      <Layout.Sider
         theme='light'
         collapsed={menuCollapse}
         width={150}
-        className='box-slider'
+        className='kit-slider'
       >
-        <Anchor affixStyle={{ position: 'fixed' }} lineless>
-          <Sidebar />
-        </Anchor>
-      </Sider>
+        <AppSide />
+      </Layout.Sider>
+
       <Button
-        className={`box-menu-collapse-btn ${
-          menuCollapse ? 'box-menu-collapse-btn-close' : ''
+        className={`kit-menu-collapse-btn ${
+          menuCollapse ? 'kit-menu-collapse-btn-close' : ''
         }`}
         icon={<IconLeft />}
         shape='circle'
@@ -47,15 +48,12 @@ function App() {
           setMenuCollapse(!menuCollapse);
         }}
       />
-      <Content className='box-wrapper'>
+      <Layout.Content className='kit-wrapper'>
         <Container />
-      </Content>
-      {/* <Col flex='auto'>
-          <Content className='box-container'>
-            <Container />
-          </Content>
-        </Col> */}
+      </Layout.Content>
     </Layout>
+  ) : (
+    <FeatureComp {...getFeature(getCardInfoByCode(state.code))} />
   );
 }
 

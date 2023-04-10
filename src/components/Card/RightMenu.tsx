@@ -1,7 +1,13 @@
 import { Menu } from '@arco-design/web-react';
+import type { FeatureProps } from './types';
 
-type Props = {};
-export default function RightMenu(props: Props) {
+export default function RightMenu({
+  id,
+  cateIndex,
+  index,
+  cmds,
+  mode
+}: FeatureProps) {
   const menus = [
     {
       id: 'add',
@@ -9,13 +15,29 @@ export default function RightMenu(props: Props) {
     }
   ];
 
+  const setPluginFeature = () => {
+    // TODO 每个 feature 都需要配置 feature 快捷打开，或者禁止
+    return utools.setFeature({
+      code: `${id}#${cateIndex}#${index}#${mode}`,
+      explain: '222hosts切换',
+      // "icon": "res/xxx.png",
+      // "icon": "data:image/png;base64,xxx...",
+      platform: ['win32', 'darwin', 'linux'],
+      // 默认会添加 id 到关键字
+      cmds: cmds.concat([id])
+    });
+  };
+
   return (
-    <Menu defaultOpenKeys={['0']} defaultSelectedKeys={['0']}>
-      <Menu.Item key='1'>添加</Menu.Item>
+    <Menu>
+      <Menu.Item key='0'>添加</Menu.Item>
       {/* TODO 判断一下是否需要 */}
-      <Menu.Item key='2'>网页快开</Menu.Item>
-      <Menu.Item key='3'>启用/禁用</Menu.Item>
-      <Menu.Item key='4'>删除</Menu.Item>
+      <Menu.Item key='1'>编辑</Menu.Item>
+      <Menu.Item key='2' onClick={setPluginFeature}>
+        网页快开
+      </Menu.Item>
+      {/* <Menu.Item key='2'>快捷启动</Menu.Item> */}
+      <Menu.Item key='3'>删除</Menu.Item>
     </Menu>
   );
 }

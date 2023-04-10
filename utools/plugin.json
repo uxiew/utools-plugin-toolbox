@@ -4,16 +4,16 @@
   "preload": "preload.ts",
   "author": "ChandlerVer5",
   "homepage": "https://www.kancloud.cn/@chandler",
-  "description": "uTools react template 😄",
+  "description": "汇集了众多实用功能的工具箱🧰，让我们高效地工作生活！",
   "pluginSetting": {
     "single": true,
-    "height": 660
+    "height": 1
   },
   "features": [
     {
-      "code": "toolbox",
-      "explain": "uTools 官方开源、安全、简洁的xxxx",
-      "cmds": ["toolbox", "xxx"]
+      "code": "!!!toolkit",
+      "explain": "效率工具箱",
+      "cmds": ["toolkit", "kit", "tk", "tb"]
     }
   ]
 }

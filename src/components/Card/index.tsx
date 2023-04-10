@@ -1,39 +1,17 @@
-import { Grid, Modal, Typography, Trigger } from '@arco-design/web-react';
-import { useState } from 'react';
-import { useBoxStore } from '../../store';
-import Features from '../../features';
+import { Grid, Typography, Trigger } from '@arco-design/web-react';
+import useFeature from '../../hooks/feature';
+import { useKitStore } from '../../store';
 import RightMenu from './RightMenu';
 import './style.scss';
-import type { CardProps } from './types';
+import type { FeatureProps } from './types';
 
 const Row = Grid.Row;
 const Col = Grid.Col;
 
-export default function Card({ index, dataIndex, id }: CardProps) {
-  const featureProp = useBoxStore().data[dataIndex].list[index];
-  const { title, name, logo } = featureProp;
+export default function Card(props: FeatureProps) {
   // const [visible, setVisible] = useState(false);
 
-  const openModal = () => {
-    console.log(`[${id}]: ${name}`);
-    Modal.info({
-      icon: null,
-      title: null,
-      footer: null,
-      closable: true,
-      style: {
-        height: '100vh',
-        width: '100vw',
-        borderRadius: 0
-      },
-      content: getFeatureComp('Glassmorphism')
-    });
-  };
-
-  const getFeatureComp = (id: string) => {
-    const Comp = Features[id] || null;
-    return <Comp {...featureProp} />;
-  };
+  const { cardInfo, openModal } = useFeature(props);
 
   return (
     <Trigger
@@ -44,28 +22,28 @@ export default function Card({ index, dataIndex, id }: CardProps) {
         bottom: 8,
         left: 8
       }}
-      popup={() => <RightMenu />}
+      popup={() => <RightMenu {...props} />}
     >
-      <div className='toolbox-card' onClick={openModal}>
+      <div className='toolkit-card' onClick={openModal}>
         <a
           rel='noopener'
-          className='toolbox-card__a'
+          className='toolkit-card__a'
           href='https://codepen.io/'
-          title={title}
+          title={cardInfo.description}
         >
-          <Row className='toolbox-card__body' align='center' div>
-            <Col className='toolbox-card__img'>
-              <img src={logo} />
+          <Row className='toolkit-card__body' align='center' div>
+            <Col className='toolkit-card__img'>
+              <img src={cardInfo.logo} />
             </Col>
-            <Col className='toolbox-card__des'>
+            <Col className='toolkit-card__des'>
               <Typography.Paragraph
                 ellipsis={{
                   cssEllipsis: true
                 }}
-                className='toolbox-card__des-name'
+                className='toolkit-card__des-name'
                 style={{ marginBottom: 0 }}
               >
-                <strong>{name}</strong>
+                <strong>{cardInfo.title}</strong>
               </Typography.Paragraph>
               <Typography.Paragraph
                 ellipsis={{
@@ -75,10 +53,10 @@ export default function Card({ index, dataIndex, id }: CardProps) {
                     props: { style: { borderRadius: '10px' } }
                   }
                 }}
-                className='toolbox-card__des-title'
+                className='toolkit-card__des-title'
                 style={{ marginBottom: 0 }}
               >
-                {title}
+                {cardInfo.description}
               </Typography.Paragraph>
             </Col>
           </Row>

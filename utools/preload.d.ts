@@ -4,8 +4,8 @@
 
 interface Window {
   preload: {
-    setName: typeof import('./preload')['setName']
-    test: typeof import('./preload')['test']
-    xxx: typeof import('./preload')['xxx']
+    fs: typeof import('./preload')['fs']
+    longExec: typeof import('./preload')['longExec']
+    run: typeof import('./preload')['run']
   }
 }
