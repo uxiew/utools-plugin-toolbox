@@ -6,7 +6,7 @@ import { IconLeft } from '@arco-design/web-react/icon';
 import useFeature from '@/hooks/feature';
 import { getCardInfoByCode } from './common';
 import { useSetState } from 'ahooks';
-import { FeatureComp } from './features/index';
+import { FeatureComp } from './features';
 import AppSide from './App.side';
 
 function App() {

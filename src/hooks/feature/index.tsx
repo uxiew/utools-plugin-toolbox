@@ -1,32 +1,33 @@
 import { Modal } from '@arco-design/web-react';
-import Features, { FeatureComp } from '@/features';
+import { FeatureComp } from '@/features';
 import type { TKFeature } from '@/features/types';
 import type { FeatureMeta } from '@/components/Card/types';
 import { useKitStore } from '@/store';
 import { useCallback } from 'react';
 import useApp from '@/hooks/app';
 
-type UseFeatureReturnType = {
+type UseFeatureWithProp = {
   cardInfo: TKFeature;
   getFeature: (card: FeatureMeta) => TKFeature;
-  openModal: () => void;
+  open: () => void;
 };
+type UseFeature = {
+  getFeature: (card: FeatureMeta) => TKFeature;
+  open: (card: FeatureMeta) => void;
+};
+
+type EvtType = 'close';
 
 /**
  * 在不同情况下打开 Modal。
  * @param props 卡片属性。
  */
-export default function useFeature(props: FeatureMeta): UseFeatureReturnType;
-export default function useFeature(): {
-  getFeature: (card: FeatureMeta) => TKFeature;
-  openModal: (card: FeatureMeta) => void;
-};
-export default function useFeature(props?: FeatureMeta):
-  | UseFeatureReturnType
-  | {
-      getFeature: (card: FeatureMeta) => TKFeature;
-      openModal: (card: FeatureMeta) => void;
-    } {
+export default function useFeature(props: FeatureMeta): UseFeatureWithProp;
+export default function useFeature(): UseFeature;
+
+export default function useFeature(
+  props?: FeatureMeta
+): UseFeatureWithProp | UseFeature {
   const getFeatureFromStore = useKitStore((state) => state.getFeature);
 
   let cardInfo = props ? getFeature(props) : null;
@@ -35,12 +36,18 @@ export default function useFeature(props?: FeatureMeta):
     return getFeatureFromStore(card.id, card.cateIndex, card.index);
   }
 
-  const openModal = useCallback(
+  const evts: Record<EvtType, Function | undefined> = { close: undefined };
+
+  const registerCloseEvt = (close?: Function) => {
+    if (typeof close === 'function') evts.close = close;
+  };
+
+  const open = useCallback(
     (card?: FeatureMeta) => {
       cardInfo = cardInfo || (card && getFeature(card)) || null;
-      if (!cardInfo) throw new Error('openModal has no props!');
+      if (!cardInfo) throw new Error('open has no props!');
 
-      console.log(`[${cardInfo.id}]: ${cardInfo.name}`);
+      console.log(`[${cardInfo.id}]: ${cardInfo.title}`);
       Modal.info({
         icon: null,
         title: null,
@@ -51,8 +58,11 @@ export default function useFeature(props?: FeatureMeta):
           width: '100vw',
           borderRadius: 0
         },
-        content: <FeatureComp {...cardInfo} />,
-        onCancel: useApp().init
+        content: <FeatureComp {...cardInfo} onClose={registerCloseEvt} />,
+        onCancel: () => {
+          useApp().init();
+          evts.close && evts.close();
+        }
       });
     },
     [props]
@@ -60,8 +70,8 @@ export default function useFeature(props?: FeatureMeta):
   // Object.getPrototypeOf(card).constructor.name
 
   if (props) {
-    return { cardInfo: cardInfo as TKFeature, getFeature, openModal };
+    return { cardInfo: cardInfo as TKFeature, getFeature, open };
   } else {
-    return { getFeature, openModal };
+    return { getFeature, open };
   }
 }

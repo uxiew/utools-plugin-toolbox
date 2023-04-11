@@ -1,5 +1,5 @@
 // Copyright (c) 2022 ChandlerVer5
-import { exec, execFile, spawn } from 'node:child_process';
+import { exec, execSync, execFile, spawn } from 'node:child_process';
 
 const logPrefix = '[command]';
 
@@ -55,4 +55,4 @@ function longExec(command: string, options?: Object): typeof childProcess {
     return childProcess;
 }
 
-export { run, longExec };
+export { run, longExec, execSync };

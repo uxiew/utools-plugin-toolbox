@@ -72,18 +72,18 @@ export default [
         icon: 'FCFilmReel',
         features: [
             {
-                id: 'JSON',
-                title: 'CodePen1422',
+                id: 'common',
+                title: 'CodePen1452',
                 description: '开源的前端效果站',
                 url: 'https://google.com/',
-                logo: 'https://nankart.cn/img/gitee.png',
                 isCollection: true,
+                logo: 'https://nankart.cn/img/gitee.png',
                 cmds: [],
                 mode: 'app'
             },
             {
                 id: 'Favorite',
-                name: 'CodePen1142',
+                title: 'CodePen1142',
                 description: '开源的前端效果站',
                 url: 'https://google.com/',
                 isCollection: true,
@@ -92,19 +92,9 @@ export default [
                 mode: 'app'
             },
             {
-                id: 'CDN',
-                title: 'CodePen1342',
-                description: '开源的前端效果站',
-                url: 'https://google.com/',
-                isCollection: true,
-                logo: 'https://nankart.cn/img/gitee.png',
-                cmds: [],
-                mode: 'app'
-            },
-            {
-                id: 'common',
-                title: 'CodePen1452',
-                description: '开源的前端效果站',
+                id: 'clip-path',
+                title: 'clip-path 生成器',
+                description: 'clip-path 生成器',
                 url: 'https://google.com/',
                 isCollection: true,
                 logo: 'https://nankart.cn/img/gitee.png',

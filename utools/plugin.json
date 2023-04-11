@@ -6,7 +6,6 @@
   "homepage": "https://www.kancloud.cn/@chandler",
   "description": "汇集了众多实用功能的工具箱🧰，让我们高效地工作生活！",
   "pluginSetting": {
-    "single": true,
     "height": 1
   },
   "features": [

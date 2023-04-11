@@ -11,7 +11,7 @@ const Col = Grid.Col;
 export default function Card(props: FeatureProps) {
   // const [visible, setVisible] = useState(false);
 
-  const { cardInfo, openModal } = useFeature(props);
+  const { cardInfo, open } = useFeature(props);
 
   return (
     <Trigger
@@ -24,11 +24,10 @@ export default function Card(props: FeatureProps) {
       }}
       popup={() => <RightMenu {...props} />}
     >
-      <div className='toolkit-card' onClick={openModal}>
+      <div className='toolkit-card' onClick={open}>
         <a
           rel='noopener'
           className='toolkit-card__a'
-          href='https://codepen.io/'
           title={cardInfo.description}
         >
           <Row className='toolkit-card__body' align='center' div>

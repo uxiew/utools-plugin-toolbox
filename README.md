@@ -19,6 +19,8 @@ Gather together some small tools that you usually collect
 - [ ] 浏览器标签功能
 - [ ] cdn 工具（cdn;有些基于纯 Esbuild 来做线上 cjs -> esm 的 CDN 服务，比如 esm.sh 和 skypack）
 - [ ] 直接查询 gitee,github,gitlab 资源,做 sourceviewer
+- [ ] 字数统计 - http://tools.jb51.net/code/zishutongji
+- [ ] vim 学习 - https://www.fly63.com/tool/vim/
 
 # TODO
 

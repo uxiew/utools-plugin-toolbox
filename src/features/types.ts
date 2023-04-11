@@ -13,3 +13,7 @@ export interface TKFeature {
     mode: FeatureMode,
     cmds: string[]
 }
+
+export interface AllFeature extends TKFeature {
+    onClose?: (close: (args?: any) => void) => void
+}
