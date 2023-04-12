@@ -13,6 +13,7 @@
     "ahooks": "^3.7.6",
     "fuse.js": "^6.6.2",
     "html-react-parser": "^3.0.15",
+    "mime": "^3.0.0",
     "modern-copy": "^1.0.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",

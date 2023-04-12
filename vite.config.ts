@@ -12,6 +12,7 @@ export default defineConfig({
     react(),
     vitePluginForArco(),
     viteUtoolsPlugin({
+      external: ['electron'],
       configFile: 'utools/plugin.json',
       preload: { name: 'preload' }
     }),

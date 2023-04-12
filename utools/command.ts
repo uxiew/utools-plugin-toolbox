@@ -12,6 +12,10 @@ export interface CommandResult {
     message: string | undefined;
 }
 
+
+
+
+
 function run(command: string, options?: Object): Promise<CommandResult> {
     return new Promise((resolve, reject) => {
         execFile(command,

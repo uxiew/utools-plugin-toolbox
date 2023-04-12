@@ -2,15 +2,11 @@ import { useRef } from 'react';
 import type { AllFeature } from '../types';
 // @ts-ignore
 import HTML from '@/components/HTML/Renderer';
-import IndexHTML from './index.html?raw';
 import { useScript } from '@/hooks/useScript';
 // @ts-ignore
 import Iframe from 'react-iframe';
 
 // import './style.scss';
-
-// from `public` dir
-const jsLibPath = '/features/clip-path/';
 
 // const libs = [
 //   jsLibPath + 'jquery.min.js',
@@ -19,7 +15,10 @@ const jsLibPath = '/features/clip-path/';
 //   jsLibPath + 'dev-clip.js'
 // ];
 
-export default function ClipPath({ onClose }: AllFeature) {
+export default function ClipPath({ id, onClose }: AllFeature) {
+  // 统一定义名为
+  const url = window.preload.startAsarServer(id);
+
   const clipRef = useRef(null);
 
   if (onClose) {
@@ -39,8 +38,8 @@ export default function ClipPath({ onClose }: AllFeature) {
 
   return (
     <Iframe
-      url={jsLibPath + 'index.html'}
-      id=''
+      url={url}
+      id={id}
       className='w-screen h-screen'
       display='block'
       position='relative'
