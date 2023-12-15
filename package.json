@@ -28,7 +28,7 @@
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@ver5/vite-plugin-utools": "^0.2.4",
+    "@ver5/vite-plugin-utools": "^0.3.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.14",
     "less": "^4.1.3",
