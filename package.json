@@ -12,7 +12,7 @@
     "@icongo/fc": "^1.1.2",
     "ahooks": "^3.7.6",
     "fuse.js": "^6.6.2",
-    "html-react-parser": "^3.0.15",
+    "html-react-parser": "^5.0.0",
     "mime": "^3.0.0",
     "modern-copy": "^1.0.3",
     "prismjs": "^1.29.0",
