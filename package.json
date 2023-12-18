@@ -11,7 +11,7 @@
     "@arco-design/web-react": "^2.46.2",
     "@icongo/fc": "^1.1.2",
     "ahooks": "^3.7.6",
-    "fuse.js": "^6.6.2",
+    "fuse.js": "^7.0.0",
     "html-react-parser": "^3.0.15",
     "mime": "^3.0.0",
     "modern-copy": "^1.0.3",
